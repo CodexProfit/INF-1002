@@ -74,10 +74,36 @@ import sys
 # You can use sys.argv[1] to get the first input argument.
 # sys.argv[2] is the second argument, etc.
 
-def BMICalculator():
-    pass
+def BMICalculator(a=None, b=None, c=None):
+   try:
+      a = str(sys.argv[1])
+      b = float(sys.argv[2])
+      c = float(sys.argv[3])
+   except:
+      print("Your input is invalid!")
+      return
+   if a == "metric":
+      BMI = c / (b ** 2)
+   elif a == "imperial":
+      BMI = 703 * c / (b ** 2)
+   if BMI <= 16:
+      category = "Severe Thinness"
+   elif BMI <= 17:
+      category = "Moderate Thinness"
+   elif BMI <= 18.5:
+      category = "Mild Thinness"
+   elif BMI <= 25:
+      category = "Normal"
+   elif BMI <= 30:
+      category = "Overweight"
+   elif BMI <= 35:
+      category = "Obese Class I"
+   elif BMI <= 40:
+      category = "Obese Class II"
+   else:
+      category = "Obese Class III"
+   print("%0.2f\t%s" % (BMI,category))
 
 
 if __name__=='__main__':
     BMICalculator()
-    

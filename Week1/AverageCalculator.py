@@ -29,9 +29,21 @@ Your input is invalid!
 import sys
 # You can use sys.argv[1] to get the first input argument.
 # sys.argv[2] is the second argument, etc.
-def AverageCalculator():
-      pass
+
+def AverageCalculator(a=None, b=None, c=None):
+   try:
+      if len(sys.argv) < 4:
+         print("Usage: python script.py a b c")
+         return
+
+      a = float(sys.argv[1])
+      b = float(sys.argv[2])
+      c = float(sys.argv[3])
+      average = (a + b + c) / 3
+   except ValueError:
+      print("Your input is invalid!")
+      return
+   print("Average:%0.2f" % average)
 
 if __name__=='__main__':
-      AverageCalculator()
-      
+    AverageCalculator()

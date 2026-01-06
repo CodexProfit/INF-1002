@@ -38,8 +38,23 @@ Your input is invalid!
 import sys
 # You can use sys.argv[1] to get the first input argument.
 # sys.argv[2] is the second argument, etc.
-def WeeklyPaymentCalculator():
-    pass
+def WeeklyPaymentCalculator(a=None, b=None, c=None):
+    try:
+        a = float(sys.argv[1])
+        b = float(sys.argv[2])
+        c = float(sys.argv[3])
+    except:
+        print("Your input is invalid!")
+        return
+    if a > 24 * 7:
+       print("Your input is invalid!")
+       return
+    normal_hours = min(a, 40)
+    overtime_hours = max(0, a - 40)
+    normal_salary = normal_hours * b
+    overtime_salary = overtime_hours * c
+    total_salary = normal_salary + overtime_salary
+    print("Normal Salary:%0.2f, Extra Salary:%0.2f, Total Salary:%0.2f" % (normal_salary, overtime_salary, total_salary))
 
 
 if __name__=='__main__':
