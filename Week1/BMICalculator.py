@@ -87,6 +87,9 @@ def BMICalculator(a=None, b=None, c=None):
       BMI = c / (b ** 2)
    elif a == "imperial":
       BMI = 703 * c / (b ** 2)
+   else:
+      print("Your input is invalid!")
+      return
    if BMI <= 16:
       category = "Severe Thinness"
    elif BMI <= 17:
