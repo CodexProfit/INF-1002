@@ -79,6 +79,7 @@ def BMICalculator(a=None, b=None, c=None):
       a = str(sys.argv[1])
       b = float(sys.argv[2])
       c = float(sys.argv[3])
+      BMI = 0
    except:
       print("Your input is invalid!")
       return
